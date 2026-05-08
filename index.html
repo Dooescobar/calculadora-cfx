@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0064)file:///C:/Users/Usuario/Downloads/calculadora-custo-meta_3.html -->
+<!-- saved from url=(0064)file:///C:/Users/Usuario/Downloads/calculadora-custo-meta_4.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora de Custo Meta e Precificação</title>
-<script src="./001_files/qrcode.min.js.download"></script>
-<script src="./001_files/qrcode.min(1).js.download"></script>
+<script src="./002_files/qrcode.min.js.download"></script>
+<script src="./002_files/qrcode.min(1).js.download"></script>
 <style>
   :root {
     --laranja: #F26B1F;
@@ -383,6 +383,18 @@
     background: var(--laranja);
     box-shadow: 0 4px 12px rgba(242,107,31,0.3);
   }
+
+  .pdf-aviso {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: #FDF1E8;
+    border-left: 3px solid var(--laranja);
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--cinza-700);
+    line-height: 1.4;
+  }
+  .pdf-aviso strong { color: var(--cinza-900); }
 
   /* CONTAINER DO RELATÓRIO PDF (oculto na tela, visível na impressão) */
   #pdf-area { display: none; }
@@ -860,97 +872,14 @@
       </div>
 
       <button class="meta-btn" id="btn_meta" onclick="abrirModalMeta()">🎯 Atingir Meta</button>
+      <p class="pdf-aviso">Ao exportar, selecione <strong>"Salvar como PDF"</strong> como destino. Não utilize <strong>"Microsoft Print to PDF"</strong> (não preserva o link).</p>
       <button class="pdf-btn" onclick="gerarPDF()">📄 Exportar PDF</button>
       <button class="reset-btn" onclick="resetar()">Restaurar valores padrão</button>
     </div>
   </div>
 
   <!-- ÁREA DE IMPRESSÃO PDF (oculta na tela) -->
-  <div id="pdf-area">
-      <div class="pdf-header">
-        <div>
-          <h1>Calculadora de Custo Meta e Precificação</h1>
-        </div>
-        <div class="data">08/05/2026 15:32</div>
-      </div>
-
-      <div class="pdf-produto">
-        <div class="l">PRODUTO</div>
-        <div class="v">Produto X</div>
-      </div>
-
-      <!-- SEQUÊNCIA INTERCALADA: blocos de inputs + etapas, igual ao HTML -->
-      
-      <div class="blc-inp">
-        <div class="blc-ttl">Preço &amp; Markup</div>
-        <div class="ln"><span class="l">Sell Out</span><span class="v">R$&nbsp;1.000,00</span></div><div class="ln"><span class="l">Markup da Revenda</span><span class="v">1,60x</span></div><div class="ln"><span class="l">Preço de Tabela / Sell In</span><span class="v">R$&nbsp;625,00</span></div>
-      </div>
-
-      
-      <div class="blc-inp">
-        <div class="blc-ttl">Impostos</div>
-        <div class="ln"><span class="l">IPI</span><span class="v">5,20%</span></div><div class="ln"><span class="l">ST</span><span class="v">0,00%</span></div><div class="ln"><span class="l">ICMS</span><span class="v">4,00%</span></div><div class="ln"><span class="l">PIS COFINS</span><span class="v">9,25%</span></div><div class="ln"><span class="l">DIFAL</span><span class="v">16,50%</span></div>
-      </div>
-
-      
-      <div class="et">
-        <div class="et-h"><span class="num">1</span><span class="ttl">ROL — Receita Operacional Líquida</span></div>
-        <div class="conta">R$&nbsp;625,00 − R$&nbsp;218,44</div>
-        <div class="res"><span>ROL</span><strong>R$&nbsp;406,56</strong></div>
-      </div>
-
-      
-      <div class="blc-inp">
-        <div class="blc-ttl">DVV</div>
-        <div class="ln"><span class="l">Frete CIF</span><span class="v">0,00%</span></div><div class="ln"><span class="l">Frete Transferência</span><span class="v">0,00%</span></div><div class="ln"><span class="l">Verba Marketing</span><span class="v">2,05%</span></div><div class="ln"><span class="l">Acordo Comercial</span><span class="v">2,00%</span></div><div class="ln"><span class="l">Comissões s/ vendas</span><span class="v">4,00%</span></div><div class="ln"><span class="l">Royalties</span><span class="v">0,00%</span></div><div class="ln"><span class="l">Financeiro</span><span class="v">1,46%</span></div>
-      </div>
-
-      
-      <div class="blc-inp">
-        <div class="blc-ttl">Margem</div>
-        <div class="ln"><span class="l">Margem (LOB)</span><span class="v">30,00%</span></div>
-      </div>
-
-      
-      <div class="et">
-        <div class="et-h"><span class="num">2</span><span class="ttl">Custo Produto em Estoque</span></div>
-        <div class="conta">R$&nbsp;406,56 − R$&nbsp;59,44 − R$&nbsp;121,97</div>
-        <div class="res"><span>Custo Produto em Estoque</span><strong>R$&nbsp;225,16</strong></div>
-      </div>
-
-      
-      <div class="blc-inp">
-        <div class="blc-ttl">Importação &amp; Cotação</div>
-        <div class="ln"><span class="l">Despesas de Importação</span><span class="v">37,00%</span></div><div class="ln"><span class="l">Moeda</span><span class="v">Reais (R$)</span></div>
-      </div>
-
-      
-      <div class="et">
-        <div class="et-h"><span class="num">3</span><span class="ttl">Custo Meta</span></div>
-        <div class="conta">R$&nbsp;225,16 ÷ 1,3700</div>
-        <div class="res"><span>Custo Meta</span><strong>R$&nbsp;164,35</strong></div>
-      </div>
-
-      
-      <div class="blc-inp">
-        <div class="blc-ttl">Custo de Projeto</div>
-        <div class="ln"><span class="l">Custo de Projeto</span><span class="v">R$&nbsp;100,00</span></div>
-      </div>
-
-      <div class="pdf-veredito viavel">
-        <div class="status">✓ PRODUTO VIÁVEL</div>
-        <div class="comp">
-          Custo de Projeto <strong>R$&nbsp;100,00</strong> ≤ Meta <strong>R$&nbsp;164,35</strong>
-          &nbsp;·&nbsp; Folga: <strong>R$&nbsp;64,35</strong>
-        </div>
-      </div>
-
-      <div class="pdf-link">
-        <div class="link-info">
-          <div class="link-ttl">Recuperar esta simulação</div>
-          <a class="link-url" href="file:///C:/Users/Usuario/Downloads/calculadora-custo-meta_3.html?d=eyJtIjoiQlJMIiwibm9tZV9wcm9kdXRvIjoiUHJvZHV0byBYIiwicHJlY29fYW51bmNpYWRvIjoxMDAwLCJtYXJrdXAiOjEuNiwic2VsbF9pbiI6NjI1LCJpcGkiOjUuMiwic3QiOjAsImljbXMiOjQsInBpc19jb2ZpbnMiOjkuMjUsImRpZmFsIjoxNi41LCJmcmV0ZV9jaWYiOjAsImZyZXRlX3RyYW5zZiI6MCwibWFya2V0aW5nIjoyLjA1LCJhY29yZG8iOjIsImNvbWlzc29lcyI6NCwicm95YWx0aWVzIjowLCJmaW5hbmNlaXJvIjoxLjQ2LCJsb2IiOjMwLCJkZXNwX2ltcCI6MzcsImNvdGFjYW8iOjUuMSwiY290YWNhb19ldXIiOjUuNSwiY3VzdG9fbmVnb2NpYWRvIjoxMDB9" target="_blank" rel="noopener">Link de Acesso</a>
-        </div>
-      </div></div>
+  <div id="pdf-area"></div>
 
   <!-- MODAL: SELEÇÃO DE VARIÁVEL -->
   <div class="modal-overlay" id="modal_selecao">
